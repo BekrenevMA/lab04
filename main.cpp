@@ -114,6 +114,16 @@ cale (uint16_t op1, char operat, uint16_t op2)
     }
 }
 
+struct Student
+{
+    char name[17];
+    uint16_t year;
+    float average;
+    uint8_t gender:1;
+    uint8_t coursere;
+    Student* starosta;
+};
+
 int main()
 {
     /*cout << "Vvedite chislo: ";
@@ -153,10 +163,33 @@ int main()
     cout << '\n';
 
     uint8_t t=15;
-    print_in_binary(t);*/
+    print_in_binary(t);
 
     char operat='|';
-    cale(1025, operat, 127);
+    cale(1025, operat, 127);*/
+
+    Student students[3]={{"Nikolay", 2018, 2.4, 0, 1, nullptr}, {"Misha", 2018, 4.0, 1, 1, &students[0]}, {"Marina", 2018, 4.5, 0, 1, &students[0]}};
+
+    cout<<"Addres of students:"<< '\n'
+        <<&students<<'\n';
+    cout<<"Size of students"<< '\n'
+        <<sizeof(students)<< '\n';
+
+    for (Student stud:students)
+    {
+        cout<<"Addres of student:"<< '\n'
+        <<&stud<<'\n';
+        cout<<"Size of student"<< '\n'
+        <<sizeof(stud)<< '\n';
+    }
+
+    cout<<"Addres of name of student 1: "<< '\n'
+        <<students[1].name<< '\n';
+    cout<<"Offset of name of student 1: "<< '\n'
+        <<offsetof(Student, students.name)<< '\n';
+    cout<<"Size of name of student 1: "<< '\n'
+        <<sizeof(students[1].name)<< '\n';
+
 
     return 0;
 }
