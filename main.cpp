@@ -178,7 +178,7 @@ int main()
     for (Student stud:students)
     {
         cout<<"Addres of student:"<< '\n'
-        <<&stud<<'\n';
+        <<stud.name<<'\n';
         cout<<"Size of student"<< '\n'
         <<sizeof(stud)<< '\n';
     }
@@ -186,7 +186,7 @@ int main()
     cout<<"Addres of name of student 1: "<< '\n'
         <<students[1].name<< '\n';
     cout<<"Offset of name of student 1: "<< '\n'
-        <<offsetof(Student, students.name)<< '\n';
+        <<offsetof(Student, name)<< '\n';
     cout<<"Size of name of student 1: "<< '\n'
         <<sizeof(students[1].name)<< '\n';
 
