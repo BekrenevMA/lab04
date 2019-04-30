@@ -177,8 +177,9 @@ int main()
 
     for (Student stud:students)
     {
-        cout<<"Addres of student:"<< '\n'
-        <<stud.name<<'\n';
+        cout<<"Addres of student:"<< '\n';
+        print_in_hex(&stud.name, sizeof(stud.name));
+        cout<<'\n';
         cout<<"Size of student"<< '\n'
         <<sizeof(stud)<< '\n';
     }
